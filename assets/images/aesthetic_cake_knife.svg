@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180" fill="none">
+  <defs>
+    <!-- Handle 3D Pastel Pink Pearlescent Gradient -->
+    <linearGradient id="handlePinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB5C5" />
+      <stop offset="25%" stop-color="#FFE4E8" />
+      <stop offset="60%" stop-color="#FF9EAF" />
+      <stop offset="100%" stop-color="#E26D82" />
+    </linearGradient>
+
+    <!-- Handle Top Glossy Highlight -->
+    <linearGradient id="handleTopGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Handle Bottom Bevel Shadow -->
+    <linearGradient id="handleBottomShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#C24D63" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Luxury 3D Gold Ribbon & Bolster Gradient -->
+    <linearGradient id="goldLuxuryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8D6" />
+      <stop offset="30%" stop-color="#FFDF00" />
+      <stop offset="65%" stop-color="#D4AF37" />
+      <stop offset="85%" stop-color="#AA771C" />
+      <stop offset="100%" stop-color="#66460A" />
+    </linearGradient>
+
+    <!-- Stainless Steel Chrome Blade Gradient -->
+    <linearGradient id="chromeBladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="20%" stop-color="#F8FAFC" />
+      <stop offset="45%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#CBD5E1" />
+      <stop offset="90%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+
+    <!-- Blade Specular Shine Reflection -->
+    <linearGradient id="bladeSpecularGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Sharp Bottom Cutting Bevel Gradient -->
+    <linearGradient id="cuttingEdgeBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <!-- Soft Ambient Knife Shadow -->
+    <filter id="knifeLuxuryShadow" x="-20%" y="-20%" width="145%" height="155%">
+      <feDropShadow dx="-4" dy="8" stdDeviation="6" flood-color="rgba(214, 51, 108, 0.32)" />
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0, 0, 0, 0.18)" />
+    </filter>
+
+    <!-- Sparkle Diamond Glow Filter -->
+    <filter id="sparkleGlowFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g filter="url(#knifeLuxuryShadow)">
+    <!-- ================= 1. PASTEL PINK LUXURY HANDLE (Top-Left) ================= -->
+    <!-- Handle Outer Body -->
+    <path d="M 24,28 C 30,20 44,18 54,24 L 94,56 C 100,61 98,70 92,75 L 80,84 C 74,89 66,87 60,82 L 20,50 C 14,45 18,34 24,28 Z" 
+          fill="url(#handlePinkGrad)" 
+          stroke="#D86076" 
+          stroke-width="1.2" />
+
+    <!-- Handle Bottom 3D Shading -->
+    <path d="M 20,50 C 14,45 18,34 24,28 L 60,82 C 66,87 74,89 80,84 L 92,75" 
+          fill="url(#handleBottomShadow)" />
+
+    <!-- Handle Top Gloss Highlight Stroke -->
+    <path d="M 26,30 C 31,25 42,22 50,27 L 88,58 C 93,62 91,68 87,71" 
+          stroke="url(#handleTopGloss)" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          fill="none" />
+
+    <!-- Handle Luxury Gold Studs, Heart & Star Inlay -->
+    <circle cx="38" cy="38" r="2.5" fill="url(#goldLuxuryGrad)" stroke="#8B6508" stroke-width="0.5" />
+    <circle cx="72" cy="65" r="2.5" fill="url(#goldLuxuryGrad)" stroke="#8B6508" stroke-width="0.5" />
+    
+    <!-- Gold Cute Heart on Handle -->
+    <path d="M 55,47 C 55,44 52,42 49.5,44 C 47,42 44,44 44,47 C 44,51 49.5,55 49.5,55 C 49.5,55 55,51 55,47 Z" 
+          fill="url(#goldLuxuryGrad)" 
+          stroke="#8B6508" 
+          stroke-width="0.6" />
+
+    <!-- ================= 2. GOLD BOLSTER & COLLAR ================= -->
+    <path d="M 90,54 L 102,63 C 105,65 105,70 102,73 L 88,83 C 85,85 81,83 80,79 L 87,65 Z" 
+          fill="url(#goldLuxuryGrad)" 
+          stroke="#8B6508" 
+          stroke-width="0.8" />
+
+    <!-- ================= 3. STEEL BLADE (Pointing Down-Right Towards Cake) ================= -->
+    <!-- Blade Main Body: Straight Top Spine to Tip (222, 158), Wide Curved Cutting Edge on Bottom -->
+    <path d="M 100,64 L 222,158 C 220,161 206,163 182,156 C 152,146 120,126 92,94 C 88,90 89,80 94,76 Z" 
+          fill="url(#chromeBladeGrad)" 
+          stroke="#94A3B8" 
+          stroke-width="1" />
+
+    <!-- Blade Specular Diagonal Light Sheen -->
+    <path d="M 102,66 L 218,156 L 175,148 L 98,84 Z" 
+          fill="url(#bladeSpecularGrad)" />
+
+    <!-- Razor-Sharp Cutting Edge (Lower curved belly facing cake) -->
+    <path d="M 94,86 C 122,118 154,138 184,148 C 204,154 218,157 222,158 C 218,160 202,163 178,156 C 148,146 118,124 90,92 Z" 
+          fill="url(#cuttingEdgeBevel)" />
+    
+    <!-- Pure White Razor Edge Line -->
+    <path d="M 90,92 C 118,124 148,146 178,156 C 202,163 218,160 222,158" 
+          stroke="#FFFFFF" 
+          stroke-width="1.6" 
+          stroke-linecap="round" />
+
+    <!-- ================= 4. LUXURY 3D GOLD RIBBON BOW ================= -->
+    <!-- Left Ribbon Loop -->
+    <path d="M 94,66 C 85,54 75,62 83,70 C 89,76 94,69 94,66 Z" 
+          fill="url(#goldLuxuryGrad)" 
+          stroke="#8B6508" 
+          stroke-width="0.8" />
+    <path d="M 91,64 C 84,57 79,63 85,68 Z" fill="#FFF8D6" opacity="0.8" />
+
+    <!-- Right Ribbon Loop -->
+    <path d="M 98,69 C 109,60 119,68 111,76 C 105,82 98,74 98,69 Z" 
+          fill="url(#goldLuxuryGrad)" 
+          stroke="#8B6508" 
+          stroke-width="0.8" />
+    <path d="M 100,68 C 108,62 114,68 108,73 Z" fill="#FFF8D6" opacity="0.8" />
+
+    <!-- Ribbon Hanging Tails -->
+    <path d="M 92,72 C 87,80 81,86 77,90 C 82,89 87,86 93,77 Z" fill="url(#goldLuxuryGrad)" />
+    <path d="M 97,74 C 100,83 104,89 107,93 C 103,91 99,87 96,78 Z" fill="url(#goldLuxuryGrad)" />
+
+    <!-- Center Bow Knot -->
+    <circle cx="95" cy="68" r="4.8" fill="url(#goldLuxuryGrad)" stroke="#66460A" stroke-width="0.8" />
+    <circle cx="94" cy="67" r="1.6" fill="#FFFFFF" opacity="0.9" />
+
+    <!-- ================= 5. SPARKLING DIAMOND GLINTS ================= -->
+    <g filter="url(#sparkleGlowFilter)">
+      <!-- Blade Tip Diamond Glint -->
+      <path d="M 222,154 Q 222,158 226,158 Q 222,158 222,162 Q 222,158 218,158 Q 222,158 222,154 Z" fill="#FFFFFF" />
+      <circle cx="222" cy="158" r="1.2" fill="#FFFFFF" />
+
+      <!-- Bow Diamond Sparkle -->
+      <path d="M 110,60 Q 110,63 113,63 Q 110,63 110,66 Q 110,63 107,63 Q 110,63 110,60 Z" fill="#FFF8D6" />
+
+      <!-- Mid Blade Sparkle -->
+      <path d="M 160,115 Q 160,118 163,118 Q 160,118 160,121 Q 160,118 157,118 Q 160,118 160,115 Z" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+[
+  {
+    "start": 0.0,
+    "end": 4.5,
+    "text": "I found a love for me",
+    "words": [{"start": 0.0, "end": 4.5, "text": "I found a love for me"}]
+  },
+  {
+    "start": 4.5,
+    "end": 8.0,
+    "text": "Darling, just dive right in",
+    "words": [{"start": 4.5, "end": 8.0, "text": "Darling, just dive right in"}]
+  },
+  {
+    "start": 8.0,
+    "end": 12.0,
+    "text": "And follow my lead",
+    "words": [{"start": 8.0, "end": 12.0, "text": "And follow my lead"}]
+  },
+  {
+    "start": 12.0,
+    "end": 16.0,
+    "text": "Well, I found a girl, beautiful and sweet",
+    "words": [{"start": 12.0, "end": 16.0, "text": "Well, I found a girl, beautiful and sweet"}]
+  },
+  {
+    "start": 16.0,
+    "end": 20.0,
+    "text": "I never knew you were the someone waiting for me",
+    "words": [{"start": 16.0, "end": 20.0, "text": "I never knew you were the someone waiting for me"}]
+  },
+  {
+    "start": 20.0,
+    "end": 24.0,
+    "text": "'Cause we were just kids when we fell in love",
+    "words": [{"start": 20.0, "end": 24.0, "text": "'Cause we were just kids when we fell in love"}]
+  },
+  {
+    "start": 24.0,
+    "end": 28.0,
+    "text": "Not knowing what it was",
+    "words": [{"start": 24.0, "end": 28.0, "text": "Not knowing what it was"}]
+  },
+  {
+    "start": 28.0,
+    "end": 31.49,
+    "text": "I will not give you up this time",
+    "words": [{"start": 28.0, "end": 31.49, "text": "I will not give you up this time"}]
+  },
+  {
+    "start": 31.49,
+    "end": 35.0,
+    "text": "",
+    "isFinale": true,
+    "words": [{"start": 31.49, "end": 35.0, "text": ""}]
+  }
+]

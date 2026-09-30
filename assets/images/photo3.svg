@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8F4F8"/>
+      <stop offset="100%" stop-color="#FFE5EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#g3)"/>
+  <circle cx="250" cy="220" r="140" fill="#FFFDF9"/>
+  <!-- Cute Camera / Memories Icon -->
+  <g transform="translate(170, 150)">
+    <rect x="20" y="30" width="120" height="85" rx="16" fill="#F4A261" stroke="#E76F51" stroke-width="3"/>
+    <rect x="55" y="15" width="50" height="18" rx="6" fill="#E76F51"/>
+    <circle cx="80" cy="72" r="28" fill="#FFFDF9" stroke="#E76F51" stroke-width="4"/>
+    <circle cx="80" cy="72" r="18" fill="#2A9D8F"/>
+    <circle cx="120" cy="45" r="7" fill="#E76F51"/>
+    <circle cx="74" cy="66" r="5" fill="#FFFDF9"/>
+  </g>
+  <text x="250" y="400" font-family="'Gaegu', cursive" font-size="28" font-weight="bold" fill="#5E4044" text-anchor="middle">Every Moment Captured 📸💕</text>
+  <text x="250" y="430" font-family="'Nunito', sans-serif" font-size="14" fill="#A27B80" text-anchor="middle">Click to customize photo in config.js</text>
+</svg>

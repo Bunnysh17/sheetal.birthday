@@ -1,0 +1,16 @@
+# Large Archives & Temp Models
+*.zip
+vosk-model*
+temp.wav
+
+# Python & PowerShell Scripts / Scratch
+*.py
+*.ps1
+*.bat
+*.txt
+*.bak
+*.before-perfect-sync
+
+# Node & Vercel
+node_modules
+.vercel

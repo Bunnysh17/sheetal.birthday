@@ -1,0 +1,329 @@
+/* ===================================================================
+   🌿 VINTAGE 90s AESTHETIC BIRTHDAY SURPRISE
+   Aged parchment · Dusty rose · Pressed flowers · Candlelight warmth
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Homemade+Apple&family=Caveat:wght@500;600;700&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root {
+  /* 🎨 Vintage 90s Parchment Palette */
+  --bg-cream: #F5EBE0;
+  --bg-parchment: #FFF8F0;
+  --bg-warm: #EDE4D8;
+  --bg-soft: #E8D5C4;
+  --bg-aged: #DBCAB8;
+
+  /* 🌸 Vintage Rose Tones */
+  --vintage-rose: #C9908F;
+  --dusty-pink: #E8C4C4;
+  --muted-mauve: #C4A0A0;
+  --deep-rose: #A0616A;
+  --blush: #EAD4D4;
+
+  /* 🌿 Botanical Accent Tones */
+  --sage: #B5C5A3;
+  --sage-muted: #A3B891;
+  --lavender: #C4B7D4;
+  --antique-gold: #C9A86C;
+  --bronze: #B8956A;
+
+  /* 📜 Ink & Text */
+  --ink-brown: #5C4033;
+  --ink-dark: #3C2A20;
+  --text-dark: #4A3B35;
+  --text-muted: #8B7D72;
+  --text-warm: #6B5B50;
+  --white: #FFFDF8;
+  --cream-white: #FFF5EC;
+
+  /* 🎀 Buttons & Headings */
+  --btn-primary: #A0616A;
+  --btn-primary-hover: #B87878;
+  --btn-primary-active: #8A5058;
+  --heading-color: #6B3A3A;
+
+  /* Legacy aliases for existing components */
+  --btn-red: var(--btn-primary);
+  --btn-red-hover: var(--btn-primary-hover);
+  --btn-red-active: var(--btn-primary-active);
+  --heading-red: var(--heading-color);
+  --bg-pink-panel: var(--vintage-rose);
+
+  /* 📐 Radii */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+
+  /* 🖋️ Vintage Fonts */
+  --font-display: 'Playfair Display', 'DM Serif Display', 'Lora', Georgia, serif;
+  --font-chubby: 'Playfair Display', 'DM Serif Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', 'Lora', Georgia, serif;
+  --font-hand: 'Homemade Apple', 'Dancing Script', 'Caveat', cursive;
+  --font-accent: 'Dancing Script', 'Caveat', cursive;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-cream);
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  touch-action: manipulation;
+}
+
+/* ===================================================================
+   🕯️ Vintage Aged Journal Background System
+   Warm parchment base with candlelight glow spots & paper grain
+   =================================================================== */
+.vintage-journal-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* Dreamy vintage aesthetic wallpaper with soft central vignette for readability */
+  background-color: #F5EBE0;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(255, 250, 244, 0.25) 0%, rgba(247, 238, 228, 0.45) 55%, rgba(219, 202, 184, 0.75) 100%),
+    url('../assets/images/vintage_aesthetic_bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Paper Grain Noise Texture */
+.vintage-paper-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+}
+
+/* Aged Stain Spots — subtle watercolor marks */
+.vintage-stain {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.08;
+}
+
+.vintage-stain.stain-1 {
+  top: 8%;
+  left: 12%;
+  width: 220px;
+  height: 180px;
+  background: radial-gradient(ellipse, #D4B896 0%, transparent 70%);
+  transform: rotate(-15deg);
+}
+
+.vintage-stain.stain-2 {
+  bottom: 15%;
+  right: 8%;
+  width: 260px;
+  height: 200px;
+  background: radial-gradient(ellipse, #C9A88A 0%, transparent 70%);
+  transform: rotate(20deg);
+}
+
+.vintage-stain.stain-3 {
+  top: 55%;
+  left: 35%;
+  width: 180px;
+  height: 160px;
+  background: radial-gradient(ellipse, #BFA890 0%, transparent 65%);
+  transform: rotate(-8deg);
+}
+
+/* 🕯️ Warm Candlelight Ambient Glows */
+.candlelight-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.candlelight-glow.candle-1 {
+  top: 8%;
+  left: 15%;
+  width: min(450px, 55vw);
+  height: min(450px, 55vw);
+  background: radial-gradient(circle, rgba(255, 220, 150, 0.5) 0%, rgba(245, 200, 130, 0) 70%);
+  animation: candlelightDrift 16s infinite ease-in-out alternate;
+}
+
+.candlelight-glow.candle-2 {
+  top: 50%;
+  right: 10%;
+  width: min(500px, 60vw);
+  height: min(500px, 60vw);
+  background: radial-gradient(circle, rgba(230, 195, 155, 0.4) 0%, rgba(220, 180, 140, 0) 70%);
+  animation: candlelightDrift 20s infinite ease-in-out -6s alternate;
+}
+
+.candlelight-glow.candle-3 {
+  bottom: 8%;
+  left: 30%;
+  width: min(420px, 50vw);
+  height: min(420px, 50vw);
+  background: radial-gradient(circle, rgba(210, 180, 160, 0.35) 0%, rgba(200, 170, 140, 0) 65%);
+  animation: candlelightDrift 18s infinite ease-in-out -12s alternate;
+}
+
+@keyframes candlelightDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -18px) scale(1.06); }
+  100% { transform: translate(-15px, 14px) scale(0.96); }
+}
+
+/* Vintage Vignette — warm dark edges */
+.vintage-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 55%, rgba(92, 64, 51, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* ===================================================================
+   Main Responsive Wrapper
+   =================================================================== */
+#app {
+  width: 100%;
+  max-width: 960px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 24px 16px 36px;
+  z-index: 10;
+}
+
+/* ===================================================================
+   🎀 Vintage Button System — Muted Rose with Gold Accents
+   =================================================================== */
+.cute-btn, .ref-btn {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 13px 38px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--btn-primary) 0%, #8A5058 100%);
+  color: var(--cream-white);
+  border: 2px solid var(--antique-gold);
+  box-shadow:
+    0 6px 18px rgba(160, 97, 106, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(60, 30, 20, 0.3);
+}
+
+/* Subtle gold highlight line */
+.cute-btn::after, .ref-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 14px;
+  width: 16px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: rgba(201, 168, 108, 0.6);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.cute-btn:hover, .ref-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: linear-gradient(135deg, var(--btn-primary-hover) 0%, var(--btn-primary) 100%);
+  box-shadow:
+    0 10px 28px rgba(160, 97, 106, 0.4),
+    0 0 0 3px rgba(201, 168, 108, 0.25);
+}
+
+.cute-btn:active, .ref-btn:active {
+  transform: translateY(1px) scale(0.96);
+  background: linear-gradient(135deg, var(--btn-primary-active) 0%, var(--deep-rose) 100%);
+  box-shadow: 0 3px 8px rgba(160, 97, 106, 0.3);
+}
+
+/* ===================================================================
+   🖋️ Vintage Heading Style — Elegant Serif with Gold Shadow
+   =================================================================== */
+.ref-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-weight: 700;
+  color: var(--heading-color);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-shadow:
+    0 2px 0 rgba(255, 248, 240, 0.8),
+    0 3px 8px rgba(107, 58, 58, 0.12);
+}
+
+.ref-heading.arched-text {
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+/* 🐱 Character Sticker Display */
+.sticker-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===================================================================
+   Canvas Layers
+   =================================================================== */
+#particle-canvas, #confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+#particle-canvas { z-index: 1; }
+#confetti-canvas { z-index: 999; }

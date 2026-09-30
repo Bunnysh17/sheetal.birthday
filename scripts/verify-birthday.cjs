@@ -1,0 +1,45 @@
+const { chromium } = require('C:/Users/mahip/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs = require('node:fs');
+(async () => {
+ const browser = await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const errors=[];
+ for(const width of [1280,390]) {
+  const page = await browser.newPage({viewport:{width,height:900}});
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('http://localhost:8080/#cake');
+  await page.locator('#cake-action-btn').click();
+  await page.locator('#cake-action-btn').click();
+  await page.waitForTimeout(1200);
+  await page.screenshot({path:`scripts/cake-during-${width}.png`,fullPage:true});
+  await page.waitForFunction(()=>window.birthdayApp.currentPageInstance.step==='done');
+  await page.screenshot({path:`scripts/cake-after-${width}.png`,fullPage:true});
+  console.log(JSON.stringify({width,step:await page.evaluate(()=>window.birthdayApp.currentPageInstance.step),horizontalOverflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),knifeHidden:await page.locator('#real-3d-knife').isHidden()}));
+  await page.locator('#cake-action-btn').click();
+  await page.waitForSelector('.gift-hub-view');
+  await page.goto('http://localhost:8080/#letter');
+  await page.locator('#replay-btn').click();
+  await page.waitForSelector('#ending-title');
+  await page.waitForTimeout(2600);
+  await page.screenshot({path:`scripts/ending-${width}.png`,fullPage:true});
+  await page.locator('#read-letter-again').click();
+  await page.waitForSelector('#replay-btn');
+  await page.close();
+ }
+ const page=await browser.newPage({reducedMotion:'reduce'});
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://localhost:8080/#cake');
+ await page.locator('#cake-action-btn').click();
+ await page.locator('#cake-action-btn').click();
+ await page.waitForFunction(()=>window.birthdayApp.currentPageInstance.step==='done');
+ console.log('Reduced motion: passed');
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ await page.reload();
+ await page.locator('#cake-action-btn').click();
+ await page.locator('#cake-action-btn').click();
+ await page.evaluate(()=>window.birthdayApp.navigateTo('letter', false));
+ await page.waitForTimeout(1500);
+ console.log('Navigation cleanup:',await page.locator('#replay-btn').count()===1);
+ console.log('Page errors:',JSON.stringify(errors));
+ await browser.close();
+ if(errors.length) process.exitCode=1;
+})().catch(e=>{ console.error(e);process.exitCode=1; });

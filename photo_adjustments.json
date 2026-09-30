@@ -1,0 +1,301 @@
+{
+  "birthday_hat": {
+    "image": "assets/gallery/upload_1790536176961.png",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "jhumka_smile": {
+    "image": "assets/gallery/upload_1790536263785.png",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "cool_shades": {
+    "image": "assets/gallery/upload_1790536205575.png",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "peace_sign": {
+    "image": "assets/gallery/upload_1790279965330.png",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "vintage_cam": {
+    "image": "assets/gallery/photo_birthday_hat.jpg",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "sofa_pose": {
+    "image": "assets/gallery/upload_1790536309773.png",
+    "fit": "cover",
+    "x": 0,
+    "y": 0,
+    "scale": 1
+  },
+  "passcode_photo": {
+    "scale": "0.95",
+    "x": -1.2774643223415119,
+    "y": -2.3327192821708564,
+    "image": "assets/gallery/upload_1790755261827.png",
+    "frameH": "310",
+    "frameW": "305"
+  },
+  "wish_photo": {
+    "scale": 1,
+    "x": 0,
+    "y": 0,
+    "image": "assets/gallery/upload_1790756322098.png"
+  },
+  "memory_0": {
+    "image": "assets/gallery/upload_1790628274481.png",
+    "scale": 1.4,
+    "x": 0,
+    "y": 24
+  },
+  "memory_1": {
+    "image": "assets/gallery/upload_1790628294333.png",
+    "scale": 1,
+    "x": 0,
+    "y": 0
+  },
+  "memory_2": {
+    "image": "assets/gallery/upload_1790628311780.png",
+    "scale": 1.8,
+    "x": 0,
+    "y": 16
+  },
+  "memory_4": {
+    "image": "assets/gallery/upload_1790628335096.png",
+    "scale": 1,
+    "x": 0,
+    "y": -3
+  },
+  "memory_11": {
+    "image": "assets/gallery/upload_1790682690157.png",
+    "scale": 1.7,
+    "x": 0,
+    "y": -2
+  },
+  "memory_12": {
+    "image": "assets/gallery/upload_1790691388398.png",
+    "scale": 1.85,
+    "x": -15,
+    "y": -1
+  },
+  "memory_13": {
+    "image": "assets/gallery/upload_1790683258461.png",
+    "scale": 1.35,
+    "x": -20,
+    "y": 7
+  },
+  "memory_3": {
+    "image": "shinchan/bubu-dudu-kiss-0.gif",
+    "scale": 1.35,
+    "x": 0,
+    "y": -35
+  },
+  "memory_6": {
+    "image": "shinchan/bubu-dudu-1.gif",
+    "scale": 2.1,
+    "x": 0,
+    "y": -16
+  },
+  "memory_10": {
+    "image": "assets/gallery/upload_1790631861661.png",
+    "scale": 1.2,
+    "x": 0,
+    "y": 12
+  },
+  "circle_photos": {
+    "assets/gallery/upload_1790536205575.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790279965330.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/photo_jhumka_smile.jpg": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/photo_birthday_hat.jpg": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790536283430.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790631202615.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790536309773.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790536176961.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/IMG_20260916_191958_333.jpg": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790536263785.png": {
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790783859942.png": {
+      "zoom": 1.09,
+      "positionX": 50,
+      "positionY": 30,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790783885574.png": {
+      "zoom": 2.2,
+      "positionX": 33,
+      "positionY": 79,
+      "fit": "contain",
+      "frameStyle": "glass"
+    },
+    "assets/gallery/upload_1790783972989.png": {
+      "zoom": 1.1,
+      "positionX": 56,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    }
+  },
+  "circle_gallery": [
+    {
+      "src": "assets/gallery/upload_1790536205575.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790279965330.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790783859942.png",
+      "zoom": 1.09,
+      "positionX": 50,
+      "positionY": 30,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/photo_birthday_hat.jpg",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790536283430.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790631202615.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790536309773.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790536176961.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790783885574.png",
+      "zoom": 2.2,
+      "positionX": 33,
+      "positionY": 79,
+      "fit": "contain",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790536263785.png",
+      "zoom": 1,
+      "positionX": 50,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    },
+    {
+      "src": "assets/gallery/upload_1790783972989.png",
+      "zoom": 1.1,
+      "positionX": 56,
+      "positionY": 25,
+      "fit": "cover",
+      "frameStyle": "glass"
+    }
+  ]
+}

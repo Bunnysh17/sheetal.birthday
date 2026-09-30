@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3CD"/>
+      <stop offset="100%" stop-color="#FFE5EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#sg3)"/>
+  <circle cx="200" cy="120" r="70" fill="#FFFDF9"/>
+  <!-- Big Shiny Heart with Ribbon -->
+  <g transform="translate(160, 75)">
+    <path d="M40 25 C40 10 20 10 20 25 C20 45 40 60 40 60 C40 60 60 45 60 25 C60 10 40 10 40 25 Z" fill="#FF4D6D"/>
+    <!-- Sparkles -->
+    <path d="M15 15 L17 20 L22 21 L17 23 L15 28 L13 23 L8 21 L13 20 Z" fill="#FFD166"/>
+    <path d="M65 45 L67 50 L72 51 L67 53 L65 58 L63 53 L58 51 L63 50 Z" fill="#FFD166"/>
+  </g>
+  <text x="200" y="225" font-family="'Gaegu', cursive" font-size="22" font-weight="bold" fill="#4A3E3D" text-anchor="middle">Heart Full Of Memories 💖✨</text>
+  <text x="200" y="250" font-family="'Nunito', sans-serif" font-size="12" fill="#885A5A" text-anchor="middle">Customizable in config.js</text>
+</svg>

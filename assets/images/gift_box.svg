@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="100%" height="100%">
+  <defs>
+    <filter id="giftShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#D6336C" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#giftShadow)">
+    <!-- White Outline Base -->
+    <path d="M 30 45 L 110 45 L 110 120 L 30 120 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M 45 20 C 40 10, 60 10, 70 35 C 80 10, 100 10, 95 20 C 90 35, 75 40, 70 45 C 65 40, 50 35, 45 20 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round"/>
+
+    <!-- Blue Bow on Top -->
+    <!-- Left loop -->
+    <path d="M 70 42 C 55 18, 40 22, 45 32 C 50 42, 65 42, 70 42 Z" fill="#4CC9F0"/>
+    <path d="M 48 28 C 55 24, 65 30, 68 38" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Right loop -->
+    <path d="M 70 42 C 85 18, 100 22, 95 32 C 90 42, 75 42, 70 42 Z" fill="#4CC9F0"/>
+    <path d="M 92 28 C 85 24, 75 30, 72 38" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Bow Center knot -->
+    <circle cx="70" cy="42" r="6" fill="#3A0CA3"/>
+    <circle cx="69" cy="40" r="1.5" fill="#FFFFFF"/>
+
+    <!-- Box Lid -->
+    <rect x="26" y="44" width="88" height="18" rx="4" fill="#FF5D8F"/>
+    <rect x="62" y="44" width="16" height="18" fill="#4CC9F0"/>
+
+    <!-- Box Body -->
+    <rect x="32" y="62" width="76" height="54" rx="4" fill="#FF8FAB"/>
+    <!-- Yellow star pattern on box body -->
+    <polygon points="46,75 48,81 54,82 49,86 51,92 46,88 41,92 43,86 38,82 44,81" fill="#FFD166"/>
+    <polygon points="94,75 96,81 102,82 97,86 99,92 94,88 89,92 91,86 86,82 92,81" fill="#FFD166"/>
+    <polygon points="46,102 47,106 51,107 48,109 49,113 46,111 43,113 44,109 41,107 45,106" fill="#FFD166"/>
+    <polygon points="94,102 95,106 99,107 96,109 97,113 94,111 91,113 92,109 89,107 93,106" fill="#FFD166"/>
+
+    <!-- Vertical Ribbon -->
+    <rect x="62" y="62" width="16" height="54" fill="#4CC9F0"/>
+    <!-- Shadow under lid -->
+    <rect x="32" y="62" width="76" height="4" fill="#2B2D42" opacity="0.15"/>
+  </g>
+</svg>

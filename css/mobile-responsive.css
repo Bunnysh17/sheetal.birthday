@@ -1,0 +1,1246 @@
+/* ===================================================================
+   📱 COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES
+   Fixes: overflow, cut-offs, oversized elements, nav overlap, 
+   text/photo/button fitting on all pages
+   =================================================================== */
+
+/* ===================================================================
+   GLOBAL MOBILE FOUNDATIONS
+   =================================================================== */
+
+/* Prevent ANY horizontal overflow globally */
+html {
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Ensure images never overflow */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===================================================================
+   CHAPTER 5: REMOVE EDIT PHOTOS & FRAMES BUTTON/OPTIONS
+   =================================================================== */
+.circle-edit-all,
+#circle-edit-all {
+  display: none !important;
+}
+
+.circle-photo-edit {
+  display: none !important;
+}
+
+/* Hide the circle editor CSS link too (it's no longer needed) */
+.circle-editor {
+  display: none !important;
+}
+
+/* ===================================================================
+   BOTTOM NAVIGATION BAR OVERLAP FIX
+   Give content enough padding so the quick jump bar never covers it
+   =================================================================== */
+@media (max-width: 768px) {
+  /* Add bottom spacing so the fixed nav bar doesn't overlap content */
+  #app {
+    padding-bottom: 80px !important;
+  }
+  
+  /* Make the quick jump bar more mobile-friendly */
+  .dev-quick-jump-bar {
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    border-radius: 16px 16px 0 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 6px 8px !important;
+    gap: 4px !important;
+    justify-content: flex-start;
+    background: rgba(255, 248, 240, 0.98) !important;
+    box-shadow: 0 -4px 20px rgba(92, 64, 51, 0.15) !important;
+    z-index: 9999 !important;
+  }
+  
+  .dev-jump-label {
+    font-size: 0.7rem !important;
+    margin-right: 2px !important;
+  }
+  
+  .dev-jump-scroll {
+    gap: 4px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: 2px;
+  }
+  
+  .dev-jump-btn {
+    font-size: 0.65rem !important;
+    padding: 4px 8px !important;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  
+  .dev-toggle-btn {
+    padding: 3px 6px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* When collapsed, make it minimal */
+  .dev-quick-jump-bar.collapsed {
+    padding: 4px 8px !important;
+    width: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    border-radius: 16px 16px 0 0 !important;
+  }
+}
+
+/* ===================================================================
+   GLOBAL PAGE & CONTAINER MOBILE FIXES
+   =================================================================== */
+@media (max-width: 768px) {
+  #app {
+    padding: 12px 10px 80px !important;
+    max-width: 100% !important;
+  }
+  
+  .page-view {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Universal button mobile sizing */
+  .cute-btn, .ref-btn {
+    font-size: 1rem !important;
+    padding: 11px 24px !important;
+    max-width: 90vw;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* Universal heading mobile sizing */
+  .ref-heading {
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem) !important;
+    padding: 0 8px;
+  }
+}
+
+/* ===================================================================
+   PASSCODE PAGE MOBILE (Optimized Compact Fitting)
+   =================================================================== */
+@media (max-width: 768px) {
+  .passcode-stage-wrapper {
+    max-width: 100% !important;
+    padding: 0 6px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .passcode-split-card {
+    grid-template-columns: 1fr !important;
+    max-width: 310px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.2) !important;
+  }
+  
+  .passcode-left-panel {
+    border-radius: 18px 18px 0 0 !important;
+    min-height: auto !important;
+    padding: 12px 10px 8px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .passcode-polaroid-frame,
+  #passcode-frame-wrap {
+    width: 200px !important;
+    height: 150px !important;
+    padding: 6px 6px 20px 6px !important;
+    border-radius: 3px !important;
+    margin: 4px auto 0 !important;
+    transform: rotate(-1.5deg) !important;
+  }
+  
+  .sb-passcode-rose {
+    width: 50px !important;
+    bottom: -6px !important;
+    left: -6px !important;
+  }
+
+  .sb-passcode-tape {
+    width: 60px !important;
+    top: -6px !important;
+  }
+
+  .sb-stamp-cluster {
+    transform: scale(0.75);
+    transform-origin: top right;
+    top: 4px !important;
+    right: 4px !important;
+  }
+  
+  .passcode-caption-row {
+    margin-top: 6px !important;
+    margin-bottom: 2px !important;
+    gap: 4px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .passcode-cat-cute-gif {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .passcode-handwritten-caption {
+    font-size: 0.85rem !important;
+    padding: 0 4px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .passcode-right-panel {
+    border-radius: 0 0 18px 18px !important;
+    padding: 8px 12px 14px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .passcode-title {
+    font-size: 1.25rem !important;
+    margin-top: 2px !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 0.5px;
+  }
+
+  .sb-passcode-seal {
+    width: 36px !important;
+    top: 4px !important;
+    right: 8px !important;
+  }
+  
+  .passcode-boxes-wrap {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .passcode-box {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Keypad fitting */
+  .keypad-grid-ref {
+    max-width: 195px !important;
+    gap: 6px !important;
+    margin: 0 auto 8px !important;
+  }
+  
+  .keypad-circle-btn {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+  }
+  
+  .keypad-circle-btn .key-text {
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+  }
+
+  .keypad-circle-btn .key-underline {
+    font-size: 0.75rem !important;
+    margin-top: -6px !important;
+  }
+  
+  .unlock-btn-wrap {
+    margin-top: 4px !important;
+  }
+
+  .unlock-btn {
+    padding: 7px 20px !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  .passcode-keypad-cat-gif {
+    width: 36px !important;
+    bottom: 6px !important;
+    left: 8px !important;
+  }
+
+  .sb-passcode-lavender {
+    width: 38px !important;
+    bottom: 6px !important;
+    right: 8px !important;
+  }
+  
+  /* Hide decorative outer overflow elements */
+  .passcode-outer-decor {
+    display: none !important;
+  }
+}
+
+/* ===================================================================
+   CHOICE / WISH PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .choice-open-container {
+    max-width: 100% !important;
+    padding: 12px 10px 20px !important;
+    overflow: hidden !important;
+  }
+  
+  .choice-curved-title-wrap {
+    max-width: 100% !important;
+    height: 70px !important;
+  }
+  
+  .choice-curved-text {
+    font-size: 28px !important;
+  }
+  
+  .choice-stickers-wrap {
+    max-width: 100% !important;
+    min-height: 200px !important;
+  }
+  
+  .choice-cuddle-cats-img {
+    max-width: 200px !important;
+  }
+  
+  .choice-clustered-hat {
+    width: 44px !important;
+  }
+  
+  .choice-clustered-balloons {
+    width: 52px !important;
+    left: -5px !important;
+    bottom: -10px !important;
+  }
+  
+  .choice-shinchan-sticker {
+    width: 60px !important;
+    right: 0px !important;
+  }
+  
+  .choice-clustered-cupcake {
+    width: 44px !important;
+    right: 0px !important;
+  }
+  
+  .choice-buttons-row {
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    padding: 0 8px;
+  }
+  
+  .choice-buttons-row .ref-btn {
+    min-width: 120px !important;
+    font-size: 0.9rem !important;
+    padding: 10px 18px !important;
+  }
+  
+  .choice-please-cat-gif {
+    width: 60px !important;
+    left: 5px !important;
+  }
+
+  /* Birthday Wish Card */
+  .birthday-wish-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 36px 14px 28px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+  
+  .wish-title {
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+  }
+  
+  .wish-subtitle {
+    font-size: 0.9rem !important;
+    padding: 0 8px;
+  }
+  
+  .wish-centerpiece {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 12px !important;
+  }
+  
+  .wish-photo {
+    width: min(65vw, 240px) !important;
+    margin: 0 auto !important;
+  }
+  
+  .wish-paper-note {
+    padding: 18px 14px !important;
+    transform: none !important;
+  }
+  
+  .wish-three-notes {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  
+  /* Hide oversized decorations */
+  .wish-butterfly {
+    width: 44px !important;
+    right: 8px !important;
+    top: 46px !important;
+  }
+  
+  .wish-flowers-left {
+    width: 56px !important;
+    left: 4px !important;
+    opacity: 0.65 !important;
+  }
+  
+  .wish-lavender {
+    width: 60px !important;
+    right: 0 !important;
+    opacity: 0.55 !important;
+  }
+  
+  .wish-stamp {
+    width: 38px !important;
+    left: 8px !important;
+    top: 48px !important;
+  }
+  
+  .wish-decor {
+    opacity: 0.7 !important;
+  }
+}
+
+/* ===================================================================
+   CAKE PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .cake-page-view {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .cake-celebration-card {
+    max-width: 100% !important;
+    padding: 20px 12px 24px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+  
+  .cake-main-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+  }
+  
+  .cake-celebration-sub {
+    font-size: 0.95rem !important;
+    padding: 0 6px;
+  }
+  
+  .cake-stage-centerpiece {
+    max-width: 100% !important;
+    height: 260px !important;
+    transform: scale(0.85) !important;
+    margin: 15px auto 0 !important;
+  }
+  
+  .real-3d-cake-wrapper {
+    width: min(260px, 70vw) !important;
+    height: min(260px, 70vw) !important;
+  }
+  
+  .cake-companion-cats {
+    width: 70px !important;
+    right: 0 !important;
+    bottom: 4px !important;
+  }
+  
+  .cake-interactive-cluster {
+    max-width: 100% !important;
+    transform: scale(0.88) !important;
+  }
+  
+  .cake-action-btn {
+    font-size: 0.85rem !important;
+    padding: 11px 18px !important;
+    max-width: 90vw !important;
+    white-space: normal !important;
+  }
+  
+  .cake-instruction-banner {
+    padding: 8px 10px !important;
+  }
+  
+  .cake-instruction-text {
+    font-size: 0.88rem !important;
+  }
+  
+  .cake-ritual {
+    gap: 10px !important;
+    flex-wrap: wrap;
+  }
+  
+  .cake-ritual li {
+    font-size: 0.7rem !important;
+  }
+  
+  /* Scrapbook stickers - prevent overflow */
+  .sb-cake-ribbon,
+  .sb-cake-seal,
+  .sb-cake-fern,
+  .sb-cake-yarrow {
+    display: none !important;
+  }
+}
+
+/* ===================================================================
+   GIFTS HUB PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .gift-hub-container {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  .gift-boxes-trio-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    padding: 0 8px;
+  }
+  
+  .aesthetic-gift-card {
+    padding: 18px 14px !important;
+    border-radius: 18px !important;
+  }
+  
+  .gift-card-washi {
+    width: 72px !important;
+  }
+  
+  .hub-header-shinchan,
+  .hub-header-cat {
+    display: none !important;
+  }
+  
+  .hub-soft-butterfly,
+  .hub-soft-lavender {
+    display: none !important;
+  }
+}
+
+/* ===================================================================
+   GIFT 1 MEMORY MATCH GAME MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .gift1-game-view {
+    padding: 8px 8px 60px !important;
+    max-width: 100% !important;
+  }
+  
+  .gift1-game-container {
+    padding-top: 10px !important;
+  }
+
+  .game-board-card {
+    padding: 26px 12px 20px !important;
+    border-radius: 20px !important;
+    overflow: visible !important;
+    margin-top: 18px !important;
+    position: relative !important;
+  }
+  
+  .gift1-game-title {
+    font-size: clamp(1.4rem, 4.5vw, 2rem) !important;
+  }
+  
+  .memory-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+  }
+  
+  .memory-card {
+    height: 125px !important;
+    border-radius: 14px !important;
+  }
+
+  .memory-card-inner {
+    border-radius: 14px !important;
+  }
+
+  .memory-card-back,
+  .memory-card-front {
+    border-radius: 14px !important;
+    padding: 6px 6px 5px !important;
+  }
+
+  .memory-card-img-wrap {
+    border-radius: 10px !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #FAF3E8 !important;
+  }
+
+  .memory-card-img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 8px !important;
+  }
+
+  .memory-card-label {
+    font-size: 0.72rem !important;
+    padding: 2px 6px !important;
+    margin-top: 2px !important;
+    white-space: nowrap !important;
+    max-width: 98% !important;
+  }
+  
+  .memory-stats-bar {
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .stat-pill {
+    padding: 4px 12px !important;
+    font-size: 0.82rem !important;
+  }
+  
+  .game-board-shinchan {
+    width: 48px !important;
+    right: 6px !important;
+    top: -26px !important;
+    z-index: 15 !important;
+    filter: drop-shadow(0 4px 10px rgba(92, 64, 51, 0.25)) !important;
+  }
+  
+  .game-board-cat {
+    width: 44px !important;
+    left: 6px !important;
+    top: -26px !important;
+    z-index: 15 !important;
+    filter: drop-shadow(0 4px 10px rgba(92, 64, 51, 0.25)) !important;
+  }
+}
+
+/* ===================================================================
+   GIFT 1 MEMORIES / ALBUM PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .memory-album,
+  .memory-ribbon {
+    padding: 0 6px 60px !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .album-heading h1 {
+    font-size: clamp(1.6rem, 4.5vw, 2.8rem) !important;
+  }
+  
+  .album-spread {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px !important;
+  }
+  
+  .album-picture-page {
+    padding: 20px 16px !important;
+    border-right: none !important;
+  }
+  
+  .album-photo img {
+    height: 200px !important;
+  }
+  
+  .album-writing-page {
+    padding: 18px 16px !important;
+  }
+  
+  #album-note-title {
+    font-size: 1.4rem !important;
+    margin: 12px 0 !important;
+  }
+  
+  #album-note {
+    font-size: 0.95rem !important;
+    line-height: 1.75 !important;
+  }
+  
+  /* Typo edit vertical scroll */
+  .typo-edit-window {
+    height: 50vh !important;
+    min-height: 350px !important;
+  }
+  
+  .typo-slide {
+    gap: 14px !important;
+    padding: 0 8px !important;
+  }
+  
+  .typo-slide img {
+    width: 40% !important;
+    max-width: 150px !important;
+  }
+  
+  .typo-text h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  .typo-text p {
+    font-size: 0.95rem !important;
+  }
+  
+  .typo-slide:last-child .typo-text h2 {
+    font-size: 2rem !important;
+  }
+  
+  .lyric-large {
+    font-size: 2.8rem !important;
+  }
+}
+
+/* ===================================================================
+   GIFT 2 QUIZ GAME MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .gift2-game-view {
+    padding: 16px 10px 70px !important;
+  }
+  
+  .gift2-game-container {
+    max-width: 100% !important;
+  }
+  
+  .quiz-board-card {
+    padding: 24px 14px 20px !important;
+    border-radius: 20px !important;
+  }
+  
+  .quiz-question-box {
+    min-height: 180px !important;
+  }
+  
+  .question-text {
+    font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+    padding: 0 4px;
+  }
+  
+  .quiz-options-area {
+    gap: 10px !important;
+    max-width: 100% !important;
+  }
+  
+  .quiz-btn {
+    font-size: 0.9rem !important;
+    padding: 11px 18px !important;
+  }
+  
+  /* Tap Heart Game */
+  .tap-heart-container {
+    max-width: 100% !important;
+  }
+  
+  .tap-heart-title {
+    font-size: clamp(1.6rem, 4.5vw, 2.5rem) !important;
+  }
+  
+  .tap-board-card {
+    padding: 35px 14px 24px !important;
+  }
+  
+  .heart-tap-area {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  .tap-message {
+    font-size: 1.1rem !important;
+  }
+  
+  .love-meter-wrapper {
+    width: 92% !important;
+  }
+}
+
+/* ===================================================================
+   SPECIAL THINGS PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .special-cards-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 420px) {
+  .special-cards-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* ===================================================================
+   GIFT 3 CATCHER GAME MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .gift3-game-view {
+    padding: 10px 10px 70px !important;
+  }
+  
+  .gift3-game-container {
+    max-width: 100% !important;
+  }
+  
+  .catcher-board-card {
+    padding: 18px 10px 14px !important;
+    border-radius: 20px !important;
+  }
+  
+  .catcher-status-bar {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  
+  .catcher-score-pill {
+    font-size: 0.8rem !important;
+    padding: 6px 14px !important;
+  }
+  
+  .catcher-legend-hint {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ===================================================================
+   LETTER PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  [data-story-page=letter] .wish-content-layout {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  
+  [data-story-page=letter] .wish-text-col {
+    padding: 20px 14px !important;
+    width: 100% !important;
+  }
+  
+  [data-story-page=letter] .wish-text-col > p {
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
+  }
+  
+  [data-story-page=letter] .letter-companion-col {
+    display: none !important;
+  }
+  
+  .letter-preface {
+    font-size: 0.95rem !important;
+    padding: 0 10px !important;
+  }
+  
+  .letter-little-hug {
+    flex-direction: column !important;
+    padding: 16px !important;
+    text-align: center !important;
+    gap: 14px !important;
+  }
+  
+  .letter-little-hug > img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .letter-little-hug p {
+    font-size: 0.9rem !important;
+  }
+  
+  .pocket-notes {
+    padding: 18px 12px !important;
+  }
+  
+  .pocket-notes-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  
+  .pocket-notes h2 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem) !important;
+  }
+  
+  /* Scrapbook letter stickers */
+  .sb-letter-tape,
+  .sb-letter-stamp-cluster,
+  .sb-letter-seal,
+  .sb-letter-rose,
+  .sb-letter-butterfly {
+    display: none !important;
+  }
+}
+
+/* ===================================================================
+   VIDEO PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .film-copy h1 {
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+  }
+  
+  .film-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .film-portrait-frame {
+    max-width: 85vw !important;
+  }
+}
+
+/* ===================================================================
+   AWARDS PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .awards-page-view,
+  [data-story-page=awards] {
+    overflow-x: hidden !important;
+  }
+}
+
+/* ===================================================================
+   CHAPTER 5 – MEMORIES CIRCLE (3D CAROUSEL) MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .memories-circle-container {
+    height: calc(100vh - 80px) !important;
+    overflow: hidden !important;
+    padding: 10px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  
+  .memories-header h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .memories-header p {
+    font-size: 1rem !important;
+  }
+  
+  .carousel-item {
+    width: 180px !important;
+    height: 230px !important;
+  }
+  
+  #perspective-wrapper {
+    width: 180px !important;
+    height: 230px !important;
+    perspective: 1200px !important;
+  }
+  
+  .frame-polaroid {
+    padding: 8px 8px 32px 8px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* ===================================================================
+   CHAPTER INTERLUDE PAGES MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .chapter-one-page {
+    padding: 14px 10px !important;
+    min-height: auto !important;
+  }
+  
+  .chapter-one-scene {
+    min-height: auto !important;
+    padding: 42px 18px 32px !important;
+    width: min(100%, 96vw) !important;
+  }
+  
+  .chapter-one-scene h1 {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+    letter-spacing: 0.06em !important;
+  }
+  
+  .chapter-one-scene h2 {
+    font-size: clamp(1.1rem, 3vw, 1.6rem) !important;
+  }
+  
+  .chapter-one-copy {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+  }
+  
+  .chapter-one-bookmark {
+    right: 12px !important;
+    top: 16px !important;
+    font-size: 0.56rem !important;
+  }
+  
+  .chapter-one-flower {
+    left: 12px !important;
+    bottom: 12px !important;
+    font-size: 1.4rem !important;
+  }
+  
+  /* Chapter decorations */
+  .chapter-decor-moth {
+    width: 42px !important;
+    right: 10px !important;
+    bottom: 12px !important;
+  }
+  
+  .chapter-decor-rose {
+    width: 42px !important;
+    left: 6px !important;
+    top: 16px !important;
+  }
+}
+
+/* ===================================================================
+   CREDITS PAGE MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .story-ending {
+    padding: clamp(24px, 5vw, 50px) 14px !important;
+    max-width: 100% !important;
+  }
+  
+  .story-ending h1 {
+    font-size: clamp(2.2rem, 8vw, 4rem) !important;
+  }
+  
+  .story-ending-afterword {
+    font-size: 1rem !important;
+  }
+  
+  .story-ending-credit {
+    font-size: 0.9rem !important;
+  }
+  
+  .story-ending-actions {
+    gap: 12px !important;
+  }
+}
+
+/* ===================================================================
+   MODAL / OVERLAY MOBILE FIXES
+   =================================================================== */
+@media (max-width: 768px) {
+  /* Memory modal */
+  .memory-modal-card {
+    padding: 20px 14px 18px !important;
+    border-radius: 20px !important;
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+  }
+  
+  /* Photo adjust modal */
+  .photo-adjust-sheet {
+    border-radius: 16px !important;
+    max-height: 95vh !important;
+    max-width: 96vw !important;
+  }
+  
+  .photo-adjust-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Photo picker */
+  .photo-picker-sheet {
+    max-width: 96vw !important;
+    max-height: 90vh !important;
+  }
+  
+  .photo-picker-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)) !important;
+    gap: 6px !important;
+  }
+  
+  /* Preview modal for Chapter 5 photos */
+  .photo-preview-overlay {
+    padding: 10px !important;
+  }
+  
+  .preview-panel {
+    max-width: 95vw !important;
+    padding: 14px !important;
+  }
+  
+  .preview-photo-frame {
+    width: min(85vw, 320px) !important;
+    height: min(90vw, 400px) !important;
+  }
+}
+
+/* ===================================================================
+   SCRAPBOOK STICKER OVERFLOW PREVENTION
+   All absolute-positioned stickers that may cause horizontal overflow
+   =================================================================== */
+@media (max-width: 768px) {
+  .sb-sticker {
+    max-width: 60px !important;
+  }
+  
+  /* Hide stickers that commonly cause overflow */
+  .sb-outer-cloud,
+  .sb-outer-moon,
+  .sb-outer-letters,
+  .sb-outer-airmail,
+  .sb-choice-moth,
+  .sb-choice-flower-left,
+  .sb-choice-flower-right,
+  .sb-choice-key,
+  .sb-choice-heart-bottom {
+    display: none !important;
+  }
+}
+
+/* ===================================================================
+   GIFT BADGE PILL MOBILE
+   =================================================================== */
+@media (max-width: 768px) {
+  .gift-badge-pill {
+    font-size: 0.6rem !important;
+    padding: 4px 10px !important;
+    letter-spacing: 1.2px !important;
+  }
+}
+
+/* ===================================================================
+   ANIMATION SAFE MOBILE (Reduce heavy animations on small screens)
+   =================================================================== */
+@media (max-width: 480px) {
+  .candlelight-glow {
+    opacity: 0.25 !important;
+  }
+  
+  /* Reduce carousel spin speed for better mobile perf */
+  .carousel-scene {
+    animation-duration: 35s !important;
+  }
+}
+
+/* ===================================================================
+   EXTRA SMALL SCREENS (< 380px)
+   =================================================================== */
+@media (max-width: 380px) {
+  #app {
+    padding: 8px 6px 80px !important;
+  }
+  
+  .cute-btn, .ref-btn {
+    font-size: 0.88rem !important;
+    padding: 10px 18px !important;
+  }
+  
+  .passcode-split-card {
+    max-width: 300px !important;
+  }
+  
+  .keypad-circle-btn {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .keypad-circle-btn .key-text {
+    font-size: 1.3rem !important;
+  }
+  
+  .passcode-box {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  .carousel-item {
+    width: 160px !important;
+    height: 210px !important;
+  }
+  
+  #perspective-wrapper {
+    width: 160px !important;
+    height: 210px !important;
+  }
+  
+  .memories-header h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .cake-main-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .chapter-one-scene h1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* ===================================================================
+   CREDITS & ENDING SCENE MOBILE CENTERING
+   =================================================================== */
+@media (max-width: 768px) {
+  .final-hbd {
+    font-size: 2.7rem !important;
+    text-align: center !important;
+    margin: 20px auto !important;
+    width: 100% !important;
+    display: block !important;
+    line-height: 1.25 !important;
+  }
+  .final-wishes {
+    font-size: 1.05rem !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    line-height: 1.7 !important;
+  }
+  .the-very-end {
+    padding: 0 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .the-very-end h1 {
+    font-size: 2.8rem !important;
+    letter-spacing: 8px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+    width: 100% !important;
+    display: block !important;
+  }
+  .the-very-end p {
+    font-size: 1.05rem !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    line-height: 1.7 !important;
+  }
+}
+
+

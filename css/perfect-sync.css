@@ -1,0 +1,77 @@
+
+.perfect-memory-page {width:100%;max-width:900px;padding:0 18px 28px;text-align:center;}
+.perfect-memory-page>#memories-back-btn{display:block;margin-bottom:20px;}
+.perfect-sync .album-heading{margin-bottom:24px;}
+.perfect-scene{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:32px;min-height:360px;padding:30px;background:#fff8ed7a;border-top:1px solid #c9a86c40;border-bottom:1px solid #c9a86c40;}
+.perfect-scene-image{width:100%;height:280px;object-fit:contain;filter:drop-shadow(0 12px 14px #69493715);}
+.perfect-type{text-align:center;}
+.perfect-scene-number{font:10px/1.5 Georgia,serif;letter-spacing:.18em;color:#a47c63;}
+.perfect-sync #memory-lyric-line{font:italic clamp(1.9rem,4vw,3rem)/1.25 Georgia,serif;min-height:150px;margin:24px 0;color:#bea28c;text-wrap:balance;}
+.perfect-sync #memory-lyric-line span{transition:color .14s;}
+.perfect-sync .lyric-sung{color:#975965;}
+.perfect-sync .lyric-current{color:#683743;text-shadow:0 0 18px #d69c7c50;}
+.perfect-sign{font:italic 1rem/1.6 Georgia,serif;color:#a17d6e;}
+.perfect-sync #memory-audio-status{font:italic .9rem/1.6 Georgia,serif;color:#917362;margin:20px 0 12px;}
+.perfect-sync .memory-song-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:25px;}
+.perfect-sync #finish-gift1-btn{font-size:.95rem;white-space:normal;}
+@media(max-width:600px){.perfect-scene{grid-template-columns:1fr;gap:15px;padding:18px;}.perfect-scene-image{height:175px;}.perfect-sync #memory-lyric-line{min-height:105px;font-size:1.9rem;margin:18px 0;}.perfect-sign{font-size:.9rem;}}
+@media(prefers-reduced-motion:reduce){.perfect-sync #memory-lyric-line span{transition:none;}}
+
+/* Vertical lyric interludes with alternating photo-and-note compositions. */
+.perfect-vertical-window{height:clamp(500px,65vh,680px);position:relative;overflow:hidden;mask-image:linear-gradient(transparent,#000 7%,#000 91%,transparent);}
+.perfect-vertical-track{position:relative;will-change:transform;}
+.vertical-memory-beat{padding:20px 12px 46px;box-sizing:border-box;}
+.vertical-lyric{max-width:720px;margin:0 auto 32px;font:italic 400 clamp(1.55rem,3.8vw,2.8rem)/1.45 Georgia,serif;text-align:center;color:#ab8c77;text-wrap:balance;}
+.vertical-lyric span{transition:color .15s;}
+.vertical-lyric .lyric-emphasis{font-size:1.38em;color:#ab6c74;}
+.vertical-photo-note{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:32px;align-items:center;max-width:720px;margin:auto;}
+.vertical-photo-note figure{margin:0;padding:12px 12px 22px;background:#fffaf1;box-shadow:0 9px 25px #69493718;transform:rotate(-3deg);}
+.vertical-photo-note .photo-crop-wrapper{display:block;width:100%;height:190px;overflow:hidden;border-radius:2px;}
+.vertical-photo-note .photo-crop-wrapper img{display:block;width:100%;height:100%;object-fit:contain;}
+.vertical-photo-note.photo-on-right figure{grid-column:2;grid-row:1;transform:rotate(3deg);}
+.vertical-photo-note.photo-on-right .vertical-note{grid-column:1;grid-row:1;text-align:right;}
+.vertical-note{text-align:left;}
+.vertical-note-label{font:9px/1.6 Georgia,serif;letter-spacing:.17em;color:#af8e73;}
+.vertical-note h3{font:italic 1.45rem/1.45 Georgia,serif;color:#925c66;margin:12px 0;}
+.vertical-note p{font:1rem/1.8 Georgia,serif;color:#8f7765;}
+@media(max-width:600px){
+ .perfect-vertical-window{height:530px;}
+ .vertical-memory-beat{padding:18px 5px 42px;}
+ .vertical-lyric{font-size:1.55rem;margin-bottom:28px;}
+ .vertical-photo-note{gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+ .vertical-photo-note figure{padding:6px 6px 13px;}
+ .vertical-photo-note .photo-crop-wrapper{height:160px;}
+ .vertical-note h3{font-size:1rem;line-height:1.5;}
+ .vertical-note p{font-size:.85rem;line-height:1.6;}
+ .vertical-note-label{font-size:7px;}
+}
+@media(prefers-reduced-motion:reduce){.vertical-lyric span{transition:none;}}
+
+/* Selected central title cards, moving like film credits without karaoke. */
+.perfect-sync .vertical-lyric { margin:0 auto 20px; font-style:normal; }
+.perfect-sync .vertical-lyric[hidden] { display:none; }
+.film-title-small { display:block; font:500 clamp(.8rem,2vw,1.1rem)/1.8 Georgia,serif;letter-spacing:.2em;color:#79594d; }
+.film-title-main { display:block;font:italic 400 clamp(3.6rem,9vw,6.5rem)/1.2 Georgia,serif;color:#a06470;margin:8px 0 14px;letter-spacing:-.045em; }
+.perfect-sync .vertical-memory-beat { padding-bottom: 20px; }
+.perfect-sync .photo-interlude { padding-top: 10px; }
+.perfect-sync .album-heading h1 { font-size:clamp(1.6rem,3vw,2.3rem); }
+.perfect-sync .album-heading { margin-bottom:4px; }
+.perfect-sync .perfect-vertical-window { height:clamp(540px,70vh,740px); }
+@media(max-width:600px){.film-title-small{font-size:.76rem;letter-spacing:.13em;}.film-title-main{font-size:3.6rem;}.perfect-sync .perfect-vertical-window{height:550px;}.perfect-sync .vertical-lyric{margin-bottom:36px;}}
+
+/* Stable-size content keeps the song-linked travel at one constant speed. */
+.perfect-sync .film-title-main{color:#916525;text-shadow:0 2px 12px #c9a86c25;}
+.perfect-sync .film-title-small{color:#6b5945;}
+.vertical-photo-note figure{position:relative;}
+.memory-photo-change{display:block;width:100%;border:0;background:transparent;color:#987552;font:11px/1.5 Georgia,serif;cursor:pointer;padding-top:8px;}
+.memory-photo-editor{width:min(720px,92vw);max-height:85vh;margin:auto;padding:26px;border:1px solid #c7a97c;border-radius:18px;background:#fff8ee;color:#715242;box-shadow:0 24px 90px #3e241c40;}
+.memory-photo-editor::backdrop{background:#42302688;backdrop-filter:blur(4px);}
+.memory-editor-top{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.memory-editor-top h2{font:italic 1.6rem Georgia,serif;}
+.memory-photo-editor>p{margin:16px 0;font:1rem/1.6 Georgia,serif;}
+.memory-editor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.memory-editor-grid>div{display:flex;flex-direction:column;gap:9px;align-items:center;padding:10px;background:#f5e9d9;border-radius:10px;}
+.memory-editor-grid img{width:100%;height:130px;object-fit:contain;}
+.memory-photo-reset{border:0;background:none;font:italic 12px Georgia,serif;color:#916a55;text-decoration:underline;cursor:pointer;}
+.memory-editor-status{min-height:24px;}
+@media(max-width:600px){.memory-editor-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.memory-photo-editor{padding:18px;}.memory-editor-grid img{height:110px;}}

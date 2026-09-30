@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Analyzer</title>
+</head>
+<body>
+    <h1 id="status">Loading...</h1>
+    <div id="results"></div>
+    <script>
+        async function analyze() {
+            try {
+                const response = await fetch('assets/music/mix_35s.mp3');
+                const arrayBuffer = await response.arrayBuffer();
+                
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+                
+                const channelData = audioBuffer.getChannelData(0); // Left channel
+                const sampleRate = audioBuffer.sampleRate;
+                
+                const windowSize = sampleRate * 0.5; // 0.5 second windows
+                const results = [];
+                
+                let maxVolume = 0;
+                
+                for (let i = 0; i < channelData.length; i += windowSize) {
+                    let sum = 0;
+                    for (let j = 0; j < windowSize && (i + j) < channelData.length; j++) {
+                        sum += Math.abs(channelData[i + j]);
+                    }
+                    const avgVolume = sum / windowSize;
+                    if (avgVolume > maxVolume) maxVolume = avgVolume;
+                    results.push({ time: i / sampleRate, vol: avgVolume });
+                }
+                
+                const threshold = maxVolume * 0.2; // 20% of max volume as vocal threshold
+                let vocalStarts = [];
+                let inVocal = false;
+                
+                for (const r of results) {
+                    if (r.vol > threshold && !inVocal) {
+                        vocalStarts.push(r.time.toFixed(1));
+                        inVocal = true;
+                    } else if (r.vol < threshold * 0.5) {
+                        inVocal = false;
+                    }
+                }
+                
+                document.getElementById('status').innerText = 'Done';
+                document.getElementById('results').innerText = 'Significant volume spikes at: ' + vocalStarts.join(', ') + ' seconds.';
+            } catch (e) {
+                document.getElementById('status').innerText = 'Error: ' + e.message;
+            }
+        }
+        analyze();
+    </script>
+</body>
+</html>

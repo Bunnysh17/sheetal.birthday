@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8E8FF"/>
+      <stop offset="100%" stop-color="#FFD6E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#g5)"/>
+  <circle cx="250" cy="220" r="140" fill="#FFFDF9"/>
+  <!-- Stargazing / Moon Aesthetic -->
+  <g transform="translate(170, 140)">
+    <path d="M80 30 C50 30 35 55 35 85 C35 115 60 135 90 135 C105 135 120 128 128 118 C105 115 90 95 90 70 C90 50 100 38 112 32 C102 30 90 30 80 30 Z" fill="#F4A261"/>
+    <!-- Cute stars -->
+    <path d="M40 45 L43 52 L50 54 L43 56 L40 63 L37 56 L30 54 L37 52 Z" fill="#E76F51"/>
+    <path d="M125 75 L127 80 L132 82 L127 84 L125 89 L123 84 L118 82 L123 80 Z" fill="#E76F51"/>
+  </g>
+  <text x="250" y="400" font-family="'Gaegu', cursive" font-size="28" font-weight="bold" fill="#5E4044" text-anchor="middle">Under The Starlit Sky ✨🌙</text>
+  <text x="250" y="430" font-family="'Nunito', sans-serif" font-size="14" fill="#A27B80" text-anchor="middle">Click to customize photo in config.js</text>
+</svg>

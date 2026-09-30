@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <filter id="stickerShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#D6336C" flood-opacity="0.25"/>
+    </filter>
+    <!-- Balloon Gradients -->
+    <radialGradient id="pinkBalloon" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#FFB6C1"/>
+      <stop offset="75%" stop-color="#FF69B4"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </radialGradient>
+    <radialGradient id="peachBalloon" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FFEAA7"/>
+      <stop offset="75%" stop-color="#FAB1A0"/>
+      <stop offset="100%" stop-color="#E17055"/>
+    </radialGradient>
+    <radialGradient id="purpleBalloon" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#E8D7FF"/>
+      <stop offset="75%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#stickerShadow)">
+    <!-- White Sticker Outline Base -->
+    <g stroke="#FFFFFF" stroke-width="12" fill="#FFFFFF" stroke-linejoin="round" stroke-linecap="round">
+      <!-- Heart Balloon Outline -->
+      <path d="M70 30 C50 10 20 25 20 55 C20 85 70 115 70 115 C70 115 120 85 120 55 C120 25 90 10 70 30 Z"/>
+      <!-- Right Round Balloon Outline -->
+      <ellipse cx="135" cy="65" rx="35" ry="42"/>
+      <!-- Left Peach Balloon Outline -->
+      <ellipse cx="65" cy="95" rx="30" ry="38"/>
+      <!-- Strings & Bow outline -->
+      <path d="M70 115 Q80 150 100 175 M135 105 Q120 145 100 175 M65 130 Q85 155 100 175" stroke-width="14" fill="none"/>
+      <circle cx="100" cy="175" r="14"/>
+    </g>
+
+    <!-- Wavy Strings -->
+    <path d="M70 115 Q80 145 100 175" stroke="#E2E8F0" stroke-width="2.5" fill="none"/>
+    <path d="M135 105 Q120 145 100 175" stroke="#E2E8F0" stroke-width="2.5" fill="none"/>
+    <path d="M65 130 Q85 155 100 175" stroke="#E2E8F0" stroke-width="2.5" fill="none"/>
+
+    <!-- 1. Right Purple Balloon (Back) -->
+    <g>
+      <ellipse cx="135" cy="65" rx="34" ry="40" fill="url(#purpleBalloon)"/>
+      <!-- Knot -->
+      <polygon points="131,104 139,104 135,110" fill="#9333EA"/>
+      <!-- Specular Highlight -->
+      <path d="M148 45 Q156 55 155 68" stroke="rgba(255,255,255,0.75)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- 2. Left Peach Balloon (Mid) -->
+    <g>
+      <ellipse cx="65" cy="95" rx="28" ry="36" fill="url(#peachBalloon)"/>
+      <polygon points="61,129 69,129 65,135" fill="#E17055"/>
+      <path d="M76 75 Q82 85 80 95" stroke="rgba(255,255,255,0.75)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- 3. Front Pink Heart Balloon -->
+    <g>
+      <path d="M70 30 C52 12 24 26 24 54 C24 82 70 112 70 112 C70 112 116 82 116 54 C116 26 88 12 70 30 Z" fill="url(#pinkBalloon)"/>
+      <polygon points="66,111 74,111 70,117" fill="#DB2777"/>
+      <!-- Specular curve on heart lobe -->
+      <path d="M42 34 Q34 46 36 60" stroke="rgba(255,255,255,0.85)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="50" cy="30" r="3" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Cute Ribbon Bow at String Junction -->
+    <g transform="translate(100, 175)">
+      <!-- Left & right loops -->
+      <ellipse cx="-10" cy="-2" rx="10" ry="6" fill="#FF69B4" transform="rotate(-15 -10 -2)"/>
+      <ellipse cx="10" cy="-2" rx="10" ry="6" fill="#FF69B4" transform="rotate(15 10 -2)"/>
+      <ellipse cx="-10" cy="-2" rx="5" ry="3" fill="#FFB6C1" transform="rotate(-15 -10 -2)"/>
+      <ellipse cx="10" cy="-2" rx="5" ry="3" fill="#FFB6C1" transform="rotate(15 10 -2)"/>
+      <!-- Center knot -->
+      <circle cx="0" cy="0" r="5" fill="#DB2777"/>
+      <!-- Tails -->
+      <path d="M-2 4 Q-6 16 -12 20 M2 4 Q6 16 12 20" stroke="#DB2777" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 200" width="100%" height="100%">
+  <defs>
+    <filter id="starBalloonShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#FFB703" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#starBalloonShadow)">
+    <!-- White Sticker Outline for Balloon -->
+    <path d="M 70 20 L 85 58 L 125 62 L 95 90 L 104 130 L 70 108 L 36 130 L 45 90 L 15 62 L 55 58 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+
+    <!-- Star Balloon Body -->
+    <path d="M 70 24 L 84 58 L 122 62 L 93 88 L 102 126 L 70 105 L 38 126 L 47 88 L 18 62 L 56 58 Z" fill="#FFD166"/>
+    <path d="M 70 28 L 82 58 L 118 62 L 92 86 L 100 120 L 70 102 L 40 120 L 48 86 L 22 62 L 58 58 Z" fill="#FFE082"/>
+
+    <!-- Balloon Highlight -->
+    <path d="M 68 35 Q 75 35 80 48" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <circle cx="85" cy="55" r="2.5" fill="#FFFFFF"/>
+
+    <!-- Balloon Knot -->
+    <polygon points="66,110 74,110 70,118" fill="#FFB703"/>
+
+    <!-- Wavy Ribbon String with White Outline -->
+    <path d="M 70 118 Q 50 140 75 155 Q 100 170 65 190" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 70 118 Q 50 140 75 155 Q 100 170 65 190" stroke="#FF4D6D" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="100%" stop-color="#FFD6E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#g2)"/>
+  <circle cx="250" cy="220" r="140" fill="#FFFDF9"/>
+  <!-- Cute Sunset Beach / Park Walk -->
+  <g transform="translate(160, 140)">
+    <!-- Sun -->
+    <circle cx="90" cy="70" r="40" fill="#FFB703"/>
+    <circle cx="90" cy="70" r="48" fill="#FFD166" opacity="0.4"/>
+    <!-- Cute Flowers / Clouds -->
+    <ellipse cx="60" cy="115" rx="30" ry="16" fill="#FFFDF9"/>
+    <ellipse cx="120" cy="115" rx="30" ry="16" fill="#FFFDF9"/>
+    <ellipse cx="90" cy="110" rx="35" ry="20" fill="#FFFDF9"/>
+    <path d="M90 50 L90 40 M60 60 L50 50 M120 60 L130 50 M50 80 L40 80 M130 80 L140 80" stroke="#FFB703" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="250" y="400" font-family="'Gaegu', cursive" font-size="28" font-weight="bold" fill="#5E4044" text-anchor="middle">Golden Hour Smiles 🌅✨</text>
+  <text x="250" y="430" font-family="'Nunito', sans-serif" font-size="14" fill="#A27B80" text-anchor="middle">Click to customize photo in config.js</text>
+</svg>
