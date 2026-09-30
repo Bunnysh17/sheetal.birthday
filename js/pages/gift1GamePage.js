@@ -45,45 +45,45 @@ export const CARD_DATA = [
 export const DEFAULT_PHOTO_ADJUSTMENTS = {
   birthday_hat: { 
     image: 'assets/gallery/upload_1790536176961.png', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: 2, 
+    y: -6, 
+    scale: 1.95 
   },
   jhumka_smile: { 
     image: 'assets/gallery/upload_1790536263785.png', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: 14, 
+    y: 17, 
+    scale: 2.25 
   },
   cool_shades: { 
     image: 'assets/gallery/upload_1790536205575.png', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: 27, 
+    y: 14, 
+    scale: 1.75 
   },
   peace_sign: { 
     image: 'assets/gallery/upload_1790279965330.png', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: -4, 
+    y: 33, 
+    scale: 2.5 
   },
   vintage_cam: { 
     image: 'assets/gallery/photo_birthday_hat.jpg', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: 6, 
+    y: -27, 
+    scale: 1.85 
   },
   sofa_pose: { 
     image: 'assets/gallery/upload_1790536309773.png', 
-    fit: 'cover', 
-    x: 0, 
-    y: 0, 
-    scale: 1.0 
+    fit: 'contain', 
+    x: 13, 
+    y: 41, 
+    scale: 2.5 
   }
 };
 
@@ -112,9 +112,6 @@ export class Gift1GamePage {
       const stored = localStorage.getItem('birthday_photo_adjustments');
       if (stored) {
         const parsed = JSON.parse(stored);
-        Object.keys(parsed).forEach(k => {
-          if (parsed[k] && parsed[k].fit === 'contain') parsed[k].fit = 'cover';
-        });
         this.adjustments = { ...this.adjustments, ...parsed };
       }
     } catch (e) {
@@ -126,9 +123,6 @@ export class Gift1GamePage {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (data && typeof data === 'object') {
-          Object.keys(data).forEach(k => {
-            if (data[k] && data[k].fit === 'contain') data[k].fit = 'cover';
-          });
           this.adjustments = { ...this.adjustments, ...data };
           this.updateGameBoardImages();
         }
@@ -145,12 +139,12 @@ export class Gift1GamePage {
   }
 
   getPhotoStyle(key) {
-    const adj = this.adjustments[key] || DEFAULT_PHOTO_ADJUSTMENTS[key] || { x: 0, y: 0, scale: 1.0, fit: 'cover' };
-    const fitMode = adj.fit && adj.fit !== 'contain' ? adj.fit : 'cover';
+    const adj = this.adjustments[key] || DEFAULT_PHOTO_ADJUSTMENTS[key] || { x: 0, y: 0, scale: 1.0, fit: 'contain' };
+    const fitMode = adj.fit || 'contain';
     const x = adj.x || 0;
     const y = adj.y || 0;
     const scale = adj.scale || 1.0;
-    return `object-fit: ${fitMode} !important; object-position: center 20% !important; transform: translate(${x}px, ${y}px) scale(${scale}); transform-origin: center center;`;
+    return `object-fit: ${fitMode}; transform: translate(${x}px, ${y}px) scale(${scale}); transform-origin: center center;`;
   }
 
   render() {
