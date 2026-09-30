@@ -7,7 +7,6 @@
 import { birthdayConfig } from '../../config.js';
 import { soundManager } from '../audio.js';
 import { confettiEngine } from '../confetti.js';
-import { openPhotoAdjuster } from '../components/photoAdjusterModal.js';
 
 export const CARD_DATA = [
   { 
@@ -155,12 +154,9 @@ export class Gift1GamePage {
     container.innerHTML = `
       <div class="gift1-game-container">
         <!-- Navigation Top Bar -->
-        <div class="game-top-bar stagger-1" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="game-top-bar stagger-1">
           <button class="ref-btn game-back-btn" id="game-back-to-hub">
             ← Back to Gifts
-          </button>
-          <button class="ref-btn cute-btn" id="game-adjust-photos-btn" style="padding: 7px 16px; font-size: 0.88rem; font-weight: 700; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(189, 120, 130, 0.35); background: linear-gradient(135deg, #A0616A, #5C4033); color: #fff;">
-            🎨 Adjust Photos
           </button>
         </div>
 
@@ -184,15 +180,12 @@ export class Gift1GamePage {
           <!-- Pinned Vintage Washi Tape -->
           <img src="assets/scrapbook/scrapbook_purple_washi_tape.png" class="game-board-washi" alt="tape" />
 
-          <!-- Progress Bar & Adjust Option -->
+          <!-- Progress Bar -->
           <div class="memory-stats-bar">
             <div class="stat-pill pairs-pill">
               <span class="stat-icon">💖</span>
               <span>Pairs: <strong id="game-pairs-count">0</strong> / 6</span>
             </div>
-            <button class="ref-btn cute-btn game-board-adjust-btn" id="game-adjust-photos-board-btn">
-              🎨 Adjust Photos
-            </button>
           </div>
 
           <!-- 3D Flippable Cards Grid -->
@@ -216,11 +209,6 @@ export class Gift1GamePage {
             </div>
           </div>
         </div>
-
-        <!-- Floating Mobile Quick Adjust Button -->
-        <button class="gift1-floating-adjust-btn" id="gift1-floating-adjust-btn" title="Adjust Photos for Mobile">
-          🎨 Adjust Photos
-        </button>
       </div>
     `;
 
@@ -252,25 +240,6 @@ export class Gift1GamePage {
       soundManager.playTap();
       this.app.navigateTo('gifts-hub');
     });
-
-    // Adjust Photos Button (Supports top bar, board bar, and floating mobile button)
-    const openAdjusterHandler = () => {
-      soundManager.playTap();
-      openPhotoAdjuster({
-        onChange: (newAdj) => {
-          this.adjustments = { ...this.adjustments, ...newAdj };
-          this.updateGameBoardImages();
-        },
-        onSave: (newAdj) => {
-          this.adjustments = { ...this.adjustments, ...newAdj };
-          this.updateGameBoardImages();
-        }
-      });
-    };
-
-    container.querySelector('#game-adjust-photos-btn')?.addEventListener('click', openAdjusterHandler);
-    container.querySelector('#game-adjust-photos-board-btn')?.addEventListener('click', openAdjusterHandler);
-    container.querySelector('#gift1-floating-adjust-btn')?.addEventListener('click', openAdjusterHandler);
 
     // Claim button
     container.querySelector('#game-claim-btn')?.addEventListener('click', () => {

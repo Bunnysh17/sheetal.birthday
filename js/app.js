@@ -24,7 +24,6 @@ import { AwardsPage } from './pages/awardsPage.js?v=1.0';
 import { CreditsPage } from './pages/creditsPage.js?v=1.0';
 import { ChapterPage } from './pages/chapterPage.js?v=1.0';
 import { MemoriesCirclePage } from './pages/memoriesCirclePage.js?v=edit3';
-import { openPhotoAdjuster } from './components/photoAdjusterModal.js';
 
 class BirthdayApp {
   constructor() {
@@ -77,9 +76,6 @@ class BirthdayApp {
     new AmbientParticles('particle-canvas');
     initCustomCursor();
 
-    // Always show quick jump bar to help navigate slides quickly
-    this.createQuickJumpBar();
-
     // Initialize Global Photo & Media Lightbox for all screens
     this.initGlobalLightbox();
 
@@ -107,88 +103,6 @@ class BirthdayApp {
     document.addEventListener('keydown', initBGM);
   }
 
-  createQuickJumpBar() {
-    const jumpBar = document.createElement('div');
-    jumpBar.className = 'dev-quick-jump-bar';
-    jumpBar.id = 'dev-quick-jump-bar';
-
-    const pages = [
-      { id: 'passcode', label: '🔒 Passcode' },
-      { id: 'chapter-01', label: '📖 Ch 1' },
-      { id: 'choice', label: '✨ Wish' },
-      { id: 'chapter-02', label: '📖 Ch 2' },
-      { id: 'cake', label: '🎂 Cake' },
-      { id: 'chapter-03', label: '📖 Ch 3' },
-      { id: 'gifts-hub', label: '🎁 Gifts' },
-      { id: 'gift1-game', label: '🧩 G1 Game' },
-      { id: 'gift1-memories', label: '🎞️ Memories' },
-      { id: 'gift2-game', label: '🧩 G2 Game' },
-      { id: 'special-things', label: '💖 Special' },
-      { id: 'gift3-game', label: '🧩 G3 Game' },
-      { id: 'letter', label: '💌 Letter' },
-      { id: 'video-edit', label: '🎬 Video' },
-      { id: 'chapter-04', label: '📖 Ch 4' },
-      { id: 'awards', label: '🏆 Awards' },
-      { id: 'chapter-05', label: '📖 Ch 5' },
-      { id: 'memories-circle', label: '🔄 3D Circle' },
-      { id: 'chapter-06', label: '📖 Ch 6' },
-      { id: 'credits', label: '🎞️ Credits' }
-    ];
-    jumpBar.innerHTML = `
-      <span class="dev-jump-label">⚡ Quick Jump:</span>
-      <div class="dev-jump-scroll">
-        <button class="dev-jump-btn" id="dev-photo-adjust-btn" style="background: linear-gradient(135deg, #A0616A, #5C4033) !important; color: #fff !important; font-weight: 700; border-radius: 12px; box-shadow: 0 2px 8px rgba(160,97,106,0.4);">🎨 Adjust Photos</button>
-        ${pages.map(p => `<button class="dev-jump-btn" data-page="${p.id}">${p.label}</button>`).join('')}
-      </div>
-      <button class="dev-toggle-btn" id="dev-toggle-bar" title="Minimize Toolbar">✖</button>
-    `;
-
-    document.body.appendChild(jumpBar);
-
-    jumpBar.addEventListener('click', (e) => {
-      if (e.target.closest('#dev-photo-adjust-btn')) {
-        soundManager.playTap();
-        openPhotoAdjuster({
-          onChange: (newAdj) => {
-            if (this.currentPageInstance && typeof this.currentPageInstance.updateGameBoardImages === 'function') {
-              this.currentPageInstance.adjustments = { ...this.currentPageInstance.adjustments, ...newAdj };
-              this.currentPageInstance.updateGameBoardImages();
-            }
-          },
-          onSave: (newAdj) => {
-            if (this.currentPageInstance && typeof this.currentPageInstance.updateGameBoardImages === 'function') {
-              this.currentPageInstance.adjustments = { ...this.currentPageInstance.adjustments, ...newAdj };
-              this.currentPageInstance.updateGameBoardImages();
-            }
-          }
-        });
-        return;
-      }
-
-      const btn = e.target.closest('.dev-jump-btn');
-      if (btn) {
-        const pageId = btn.getAttribute('data-page');
-        if (pageId) {
-          window.location.hash = pageId;
-          this.navigateTo(pageId, true, { skipChapterGate: true });
-        }
-      }
-
-      if (e.target.id === 'dev-toggle-bar') {
-        jumpBar.classList.toggle('collapsed');
-        e.target.textContent = jumpBar.classList.contains('collapsed') ? '⚡ Jump' : '✖';
-      }
-    });
-  }
-
-  updateQuickJumpActive(pageId) {
-    const bar = document.getElementById('dev-quick-jump-bar');
-    if (!bar) return;
-    bar.querySelectorAll('.dev-jump-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-page') === pageId);
-    });
-  }
-
   navigateTo(pageId, animate = true, options = {}) {
     if (this.isTransitioning) return;
 
@@ -208,8 +122,6 @@ class BirthdayApp {
     if (window.location.hash !== `#${pageId}`) {
       window.history.replaceState(null, null, `#${pageId}`);
     }
-
-    this.updateQuickJumpActive(pageId);
 
     if (this.currentPageInstance && typeof this.currentPageInstance.cleanup === 'function') {
       this.currentPageInstance.cleanup();
