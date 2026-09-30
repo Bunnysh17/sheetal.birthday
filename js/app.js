@@ -101,6 +101,23 @@ class BirthdayApp {
     };
     document.addEventListener('click', initBGM);
     document.addEventListener('keydown', initBGM);
+
+    // Silent background preloading for 0ms video playback
+    setTimeout(() => {
+      try {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = 'video';
+        link.href = 'sheetal3.0.mp4';
+        document.head.appendChild(link);
+
+        const v = document.createElement('video');
+        v.preload = 'auto';
+        v.src = 'sheetal3.0.mp4';
+        v.muted = true;
+        v.load();
+      } catch (e) {}
+    }, 1500);
   }
 
   navigateTo(pageId, animate = true, options = {}) {

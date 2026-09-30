@@ -29,7 +29,7 @@ export class VideoPage {
         <!-- Video Container -->
         <div class="stagger-2" style="position: relative; z-index: 5; width: fit-content; max-width: 95%; background: rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px; box-shadow: 0 15px 40px rgba(92, 64, 51, 0.15); border: 2px solid rgba(201, 168, 108, 0.4); backdrop-filter: blur(10px);">
           <div style="border-radius: 12px; overflow: hidden; background: transparent; position: relative; display: flex; justify-content: center; align-items: center; cursor: pointer;" id="video-wrapper">
-            <video preload="metadata" playsinline webkit-playsinline style="max-width: 100%; max-height: 58vh; width: auto; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" id="my-video">
+            <video preload="auto" playsinline webkit-playsinline style="max-width: 100%; max-height: 58vh; width: auto; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" id="my-video">
               <source src="sheetal3.0.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
